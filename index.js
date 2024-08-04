@@ -13,11 +13,12 @@ mongoConect();
 const app = express();
 app.use(express.json());
 //allow api acess to other endpoints
-app.use(cors());
+
 const corsOptions = {
   origin: ["http://localhost:5173/", "http://anotherdomain.com"],
   optionsSuccessStatus: 200,
 };
+app.use(cors(corsOptions));
 //allow images/pdf loading
 app.use("/uploads", express.static("uploads"));
 //parse incoming json requests
