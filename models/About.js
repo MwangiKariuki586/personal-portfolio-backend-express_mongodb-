@@ -15,25 +15,13 @@ const aboutSchema = new Schema(
       type: String,
       required: true,
     },
-    first_image: {
-      data: {
-        type: Buffer,
-        required: true,
-      },
-      contentType: {
-        type: String,
-        required: true,
-      },
+    first_image_url: {
+      type: String,
+      required: true,
     },
-    second_image: {
-      data: {
-        type: Buffer,
-        required: true,
-      },
-      contentType: {
-        type: String,
-        required: true,
-      },
+    second_image_url: {
+      type: String,
+      required: true,
     },
     resume: {
       data: {
