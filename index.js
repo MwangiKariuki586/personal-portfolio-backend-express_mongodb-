@@ -15,7 +15,10 @@ app.use(express.json());
 //allow api acess to other endpoints
 
 const corsOptions = {
-  origin: ["http://localhost:5173/", "http://anotherdomain.com"],
+  origin: [
+    "http://localhost:5173/",
+    "https://2024-portfolio-sepia.vercel.app/",
+  ],
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
