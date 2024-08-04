@@ -16,7 +16,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://2024-portfolio-sepia.vercel.app",
+  "https://alex-mwangi-portfolio.vercel.app",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
