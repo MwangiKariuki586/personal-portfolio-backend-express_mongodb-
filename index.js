@@ -14,14 +14,22 @@ const app = express();
 app.use(express.json());
 //allow api acess to other endpoints
 
+const allowedOrigins = [
+  "http://localhost:5173/",
+  "https://2024-portfolio-sepia.vercel.app/",
+];
 const corsOptions = {
-  origin: [
-    "http://localhost:5173/",
-    "https://2024-portfolio-sepia.vercel.app/",
-  ],
-  optionsSuccessStatus: 200,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
 };
+
 app.use(cors(corsOptions));
+
 //allow images/pdf loading
 app.use("/uploads", express.static("uploads"));
 //parse incoming json requests
